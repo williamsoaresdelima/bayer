@@ -1,0 +1,43 @@
+<div class="col-sm-2" >
+  <button mat-button  (click)="openNav();" style="background-color: #006699 !important; margin-top: 50px;">
+    <span class="material-icons align-middle">
+      menu
+    </span>
+    Menu
+  </button>
+</div>
+
+<div id="mySidenav" class="sidenav" style="z-index: 2; background-color: #006699 !important" >
+  <div class='row' style="background-color: #006699; z-index: 2; margin-top: -30px;">
+    <div  style="padding: 5px; text-align: center; color:white; font-size: 20px; margin-bottom: 30px; margin-left: 20px;">
+        {{nmSistema}}
+    </div>
+  </div>
+
+  <button mat-button  (click)="closeNav();" style="background-color: #006699 !important">
+    <span class="material-icons align-middle">
+      menu
+    </span>
+    Menu
+  </button>
+
+  <div class="row mt-2 ml-4">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="/home">Página Inicial</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/usuarios">Usuários </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/tipousuarios">Tipos de Usuários</a>
+      </li>
+      <li class="nav-item" hidden>
+        <a class="nav-link" href="/logusuarios">Log Usuários</a>
+      </li>
+
+    </ul>
+  </div>
+
+</div>
+

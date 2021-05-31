@@ -1,0 +1,43 @@
+<ng-container *ngIf="shouldRun">
+  <app-header></app-header>
+  <!--<app-banner></app-banner>-->
+  <app-menu-lateral></app-menu-lateral>
+</ng-container>
+
+<div class="container" *ngIf="nav==='/home'">
+<div class="row box">
+
+    <div class="col-sm-6">
+      <div class="card" >
+      <img class="card-img" src="assets/images/usuario.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Usuários</h5>
+        <p class="card-text">Nesta sessão será possível cadastrar, listar, editar e excluir usuários</p>
+        <a href="/usuarios" class="btn btn-primary">acessar</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <img class="card-img" src="assets/images/tipousuario.png" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Tipo de Usuários</h5>
+        <p class="card-text">Nesta sessão será possível cadastrar, listar, editar e excluir tipo usuários</p>
+        <a href="/tipousuarios" class="btn btn-primary">acessar</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-4" hidden>
+    <div class="card">
+      <img class="card-img" src="assets/images/log.jpg" alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title">Log de Usuários</h5>
+        <p class="card-text">Nesta sessão será possível verificar os logs de suários</p>
+        <a href="/logusuarios" class="btn btn-primary">acessar</a>
+      </div>
+    </div>
+  </div>
+
+  </div>
+</div>
+<app-footer *ngIf="nav==='/home'"></app-footer>

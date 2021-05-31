@@ -1,0 +1,7 @@
+p.solid {border-style: solid none none none; border-color: #bbbbbb;}
+p.double {border-style: double;}
+
+.border{
+  border-color: #bbbbbb !important;
+  border-style:solid !important;
+}

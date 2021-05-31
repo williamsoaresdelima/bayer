@@ -1,0 +1,28 @@
+<div class = "container">
+  <div class="row flex" style="width: 100%; justify-content: space-between;">
+    <div style="padding: 10px;">
+      <h1 class="display-3">{{data.Titulo}}</h1>
+    </div>
+    <div hidden >
+      <span class="material-icons" style="cursor:pointer;" (click)="dialogRef.close();">
+        close
+        </span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+         <h4> {{data.Mensagem}}</h4>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+          <button mat-button class="mt-2" (click)="dialogRef.close('Não');">Não</button>
+          <button mat-button class="ml-2 mt-2" (click)="dialogRef.close('Sim');" > Sim</button>
+      </div>
+    </div>
+
+</div>
+

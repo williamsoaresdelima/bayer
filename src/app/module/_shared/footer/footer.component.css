@@ -1,0 +1,21 @@
+.fundo{
+  background-color:#0b511a !important;
+}
+
+.card {
+  background-color:#0b511a !important;
+  border: none !important;
+}
+
+.box {
+    color:white;
+    display: flex;
+    justify-content: space-between;
+    padding: 75px;
+    background-color:#0b511a !important;
+  }
+
+  .footer {
+    color:white;
+    padding: 20px;
+  }

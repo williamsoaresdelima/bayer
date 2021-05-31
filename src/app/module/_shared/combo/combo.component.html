@@ -1,0 +1,9 @@
+<mat-form-field class="inputSize" style="padding: 10px;">
+  <mat-label>{{titulo}}</mat-label>
+  <mat-select  [(ngModel)]="selected" name="item"
+  (selectionChange)="selecionou($event.value)">
+    <mat-option *ngFor="let item of items" [value]="item.value">
+      {{item.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

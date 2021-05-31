@@ -1,0 +1,79 @@
+<app-home></app-home>
+<div class = "container mb-4 mt-2" *ngIf="loading">
+  <div class="row d-flex justify-content-center">
+    <mat-spinner></mat-spinner>
+  </div>
+</div>
+
+<div class="container" *ngIf="!loading">
+  <div class="row">
+    <div class="container">
+        <div class="card col-sm-12 mt-2 " style="padding: 5px;">
+          <div class = "container">
+            <div class="row flex" style="width: 100%; justify-content: space-between;">
+              <div style="padding: 10px;">
+                <button mat-button class="ml-4 mt-2" (click)="criar();">
+                  <mat-icon>add_circle_outline</mat-icon> Novo
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="mat-elevation-z8" style="padding: 20px;">
+            <mat-form-field style="width:100%;margin-top:20px">
+              <mat-label>Filtro</mat-label>
+              <input matInput (keyup)="applyFilter($event)" placeholder="Digite o que você procura?" #input>
+            </mat-form-field>
+            <table mat-table [dataSource]="dataSource" matSort>
+
+              <ng-container matColumnDef="id">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+                <td mat-cell *matCellDef="let row"> {{row.id}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="description">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> description </th>
+                <td mat-cell *matCellDef="let row"> {{row.description}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="active">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> active </th>
+                <td mat-cell *matCellDef="let row">
+                  <mat-checkbox [(ngModel)]="row.active"
+                  [ngModelOptions]="{standalone: true}"
+                  [disabled]="true"
+                  >
+                </mat-checkbox>
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="acao">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>  </th>
+                <td mat-cell *matCellDef="let row">
+                  <span class="ml-2" style="cursor:pointer;" (click)="editar(row)" matTooltip="Edite um ítem" matTooltipClass="tooltip-gren">
+                    <mat-icon>mode_edit_outline</mat-icon>
+                  </span>
+                  <span class="ml-2" style="cursor:pointer;"  (click)="visualizar(row)" matTooltip="Visualize um ítem" matTooltipClass="tooltip-gren">
+                    <mat-icon>search_outline</mat-icon>
+                  </span>
+                  <span class="ml-2" style="cursor:pointer;" (click)="excluir(row)"  matTooltip="Exclua um ítem" matTooltipClass="tooltip-gren">
+                    <mat-icon>delete_outline</mat-icon>
+                  </span>
+                </td>
+              </ng-container>
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
+              <tr class="mat-row" *matNoDataRow>
+                <td class="mat-cell" colspan="4">Registros não encontrado "{{input.value}}"</td>
+              </tr>
+            </table>
+
+            <mat-paginator [pageSizeOptions]="[10, 25, 50, 100]"></mat-paginator>
+          </div>
+
+        </div>
+      </div>
+  </div>
+</div>

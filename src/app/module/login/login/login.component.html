@@ -1,0 +1,29 @@
+<div class="container center">
+  <div class="text-center">
+    <img class="mb-4" src="/assets/images/logo.png" alt="" width="185">
+  </div>
+    <form class="form-signin text-center">
+      <div *ngIf="!loading">
+        <h1 class="h3 mb-3 font-weight-normal">Login</h1>
+        <mat-form-field class="full-width">
+          <mat-label>Usuário</mat-label>
+          <input matInput
+              type="text"
+              name="nickname"
+              [(ngModel)]="objUsuario.nickname"
+             #login="ngModel"
+             required >
+        </mat-form-field>
+        <mat-form-field class="full-width">
+          <mat-label>Senha</mat-label>
+          <input matInput name="password"  [(ngModel)]="objUsuario.password" type="password" required >
+        </mat-form-field>
+        <button mat-raised-button (click)="onSubmit();">Login</button>
+      </div>
+      <div class="d-flex justify-content-center" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+      </div>
+    </form>
+</div>
+
+

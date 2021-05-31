@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body {
+  height: 100%;
+  max-width: 100%;
+
+}
+
+
+.mat-radio-button ~ .mat-radio-button {
+  margin-left: 16px !important;
+}
+
+.button{
+  border:none !important;
+}
+
+table{
+  width: 100%;
+  margin-top:10px;
+  margin-bottom: 20px;
+ }
+
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.mat-button, .mat-raised-button{
+    background-color: #1865a3 !important;
+    border-color: #1865a3 !important;
+    color:white;
+
+}
+.inputSize{
+  width:90% !important;
+}
+
+.mat-sidenav-content{
+  overflow-x: hidden !important;
+}
+
+.close_right{
+  justify-content: flex-end;
+}
+
+.radio_center{
+  display: flex !important;
+  margin: 15px 0 !important;
+  justify-content: center;
+}
+
+.modal{
+  max-width: 80%;
+  width: auto !important;
+  display: table;
+}
+
+.tooltip-gren {
+  background: #0b511a;
+}
